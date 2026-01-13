@@ -6,12 +6,14 @@ It supports include-only and drop-based filtering by CVE, plugin ID, product nam
 
 All processing is performed locally with no cloud connectivity, no APIs, and no data upload.
 
+> **Note:** This project is not affiliated with Tenable or Nessus.
+
 ---
 
 ## Features
 
 - GUI-based workflow (no CLI required for normal use)
-- Include-only or drop-based filtering modes
+- Include-only and drop-based filtering modes
 - Filter by:
   - CVE
   - Plugin ID
@@ -20,37 +22,31 @@ All processing is performed locally with no cloud connectivity, no APIs, and no 
   - Hostnames, IPs, or CIDR ranges
 - Preserves original scan files
 - Local SQLite index for fast searching and expansion
-- No external dependencies (Python standard library only)
 
 ---
 
 ## Included Tools
 
-- **vulnfilter.py**  
-  Interactive GUI used to filter vulnerability scan exports.
+### `vulnfilter.py`
+Interactive GUI used to filter vulnerability scan exports.
 
-- **db_builder.py**  
-  Utility to rebuild the local SQLite index from scan exports.  
-  Used by the GUI for search and expand functionality.
+- Uses Python standard library only
+- Does not modify original scan files
+- Executes all filtering locally
 
----
+### `db_builder.py`
+Utility used to rebuild the local SQLite index from scan exports.
 
-## Usage
-
-1. Run `vulnfilter.py`
-2. Use **Update Database** to index your scan exports (one-time or as needed)
-3. Select a scan file or folder
-4. Configure filters and mode
-5. Export filtered results
+- Parses `.nessus` and `.nessus.gz` files
+- Inserts one finding per (source, host, plugin)
+- Supports fast search and expand features in the GUI
 
 ---
 
-## Security & Privacy
+## Requirements
 
-- Runs entirely offline
-- No network access
-- No telemetry
-- No data leaves the system
+- Python 3.9+
+- lxml (required for XML parsing in `db_builder.py`)
 
 ---
 
