@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# Not affiliated with Tenable or Nessus
+
 """
 db_builder.py — Rebuild SQLite index from Nessus exports (FULL RESET MODE, CORRECT FINDINGS)
 
