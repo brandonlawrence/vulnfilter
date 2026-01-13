@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# Not affiliated with Tenable or Nessus
+
 """
 VulnFilter — GUI to filter .nessus files without touching originals.
 
