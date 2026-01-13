@@ -16,18 +16,18 @@ Locked decisions for this build:
 
 NEW FEATURE (this update)
 - Mode toggle:
-    * Drop mode (current behavior): removes/edits based on lists/rules.
-    * Include-only mode: ONLY keep data that matches CVEs OR Plugin IDs OR Name/CPE rules
-      (and optionally only keep hosts matching Endpoints).
+  * Drop mode (current behavior): removes/edits based on lists/rules.
+  * Include-only mode: ONLY keep data that matches CVEs OR Plugin IDs OR Name/CPE rules
+    (and optionally only keep hosts matching Endpoints).
 
 NEW FEATURE (this update)
 - Quick host list popup (after Export Filtered):
-    * Shows hosts per exported file
-    * Includes findings count per host
-    * Copy-to-clipboard button
-    * "View Last Hosts" button to re-open the last list
+  * Shows hosts per exported file
+  * Includes findings count per host
+  * Copy-to-clipboard button
+  * "View Last Hosts" button to re-open the last list
 
-No external dependencies: Python stdlib only.
+GUI uses Python standard library only.
 """
 
 import os, re, fnmatch, json, sqlite3, ipaddress, time, threading, subprocess, sys, gzip
